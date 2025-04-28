@@ -3,7 +3,7 @@ import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata = {
-  title: "Futuristic Portfolio",
+  title: "OH Portfolio",
   description: "A futuristic portfolio website with black and red color scheme",
     generator: 'v0.dev'
 }
