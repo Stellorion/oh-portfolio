@@ -1,37 +1,43 @@
-import { SectionProps } from "@/types/header"
-import Image from "next/image"
-import { ExternalLink } from "lucide-react"
-import Link from "next/link"
+import { SectionProps } from "@/types/header";
+import Image from "next/image";
+import { ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 type Project = {
-  title: string
-  description: string
-  tech: string[]
-  url: string
-  image: string
-}
+  title: string;
+  description: string;
+  tech: string[];
+  url: string;
+  website?: string;
+  image: string;
+};
 
 const projects: Project[] = [
   {
     title: "Enter Planner",
-    description: "A to-do list app with a calendar and user authentication (login/signup) using Next.js.",
+    description:
+      "A to-do list app with a calendar and user authentication (login/signup) using Next.js.",
     tech: ["Next.js", "Prisma/Neon", "Tailwind css"],
     url: "https://github.com/Stellorion/enter-planner-prototype",
-    image: "/enter-planner.png" // Add your image path here
+    website: "https://enter-planner-prototype.vercel.app",
+    image: "/enter-planner.png",
   },
   {
     title: "Portfolio Website",
-    description: "A responsive portfolio website with dark mode and animations.",
+    description:
+      "A responsive portfolio website with dark mode and animations.",
     tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
     url: "https://github.com/Stellorion/oh-portfolio",
-    image: "/oh-portfolio.png"
+    website: "https://oh-portfolio.vercel.app",
+    image: "/oh-portfolio.png",
   },
   {
     title: "Weekly Quickly",
     description: "Soon to be a web app for healthy food.",
     tech: ["Next.js", "Tailwind CSS"],
     url: "https://github.com/Stellorion/weekly-quickly",
-    image: "/weekly-quickly.png"
+    website: "https://weekly-quickly.vercel.app",
+    image: "/weekly-quickly.png",
   },
   {
     title: "My Store MGT",
@@ -39,7 +45,7 @@ const projects: Project[] = [
       "A Node.js and React-based store management app that allows users to browse and order products, using MongoDB for data management.",
     tech: ["React", "Node.js", "MongoDB"],
     url: "https://github.com/Stellorion/my-store-mgt",
-    image: "/placeholder.svg"
+    image: "/my-store-mgt.png",
   },
   {
     title: "PixelMaster",
@@ -47,7 +53,7 @@ const projects: Project[] = [
       "A desktop app in C# with Windows Forms and OpenCV for image processing, allowing users to draw, apply filters, and add text overlays.",
     tech: ["C#", "OpenCV", "Windows Forms"],
     url: "https://github.com/Stellorion/PixelMaster",
-    image: "/placeholder.svg"
+    image: "/Pixelmaster.png",
   },
   {
     title: "Py-Encryption",
@@ -55,13 +61,19 @@ const projects: Project[] = [
       "A Python script encrypts and decrypts text using XOR encoding and shuffling, allowing users to process file contents and save the result.",
     tech: ["Python", "XOR", "File Handling"],
     url: "https://github.com/Stellorion/Py-Encryption",
-    image: "/placeholder.svg"
+    image: "/py-encryption.png",
   },
-]
+];
 
-type ProjectsSectionProps = Pick<SectionProps, 'projectsRef' | 'scrollToSection'>
+type ProjectsSectionProps = Pick<
+  SectionProps,
+  "projectsRef" | "scrollToSection"
+>;
 
-const ProjectsSection = ({ projectsRef, scrollToSection }: ProjectsSectionProps) => {
+const ProjectsSection = ({
+  projectsRef,
+  scrollToSection,
+}: ProjectsSectionProps) => {
   return (
     <section ref={projectsRef} className="w-full py-20 bg-zinc-950 relative">
       <div className="absolute inset-0 z-0">
@@ -98,15 +110,25 @@ const ProjectsSection = ({ projectsRef, scrollToSection }: ProjectsSectionProps)
                   className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
                   priority={index < 3}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4 space-x-2">
                   <Link
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors flex items-center gap-2"
+                    className="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white rounded-md transition-colors flex items-center gap-2 text-sm"
                   >
-                    View Project <ExternalLink className="w-4 h-4" />
+                    Source Code <ExternalLink className="w-4 h-4" />
                   </Link>
+                  {project.website && (
+                    <Link
+                      href={project.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors flex items-center gap-2 text-sm"
+                    >
+                      Visit Website <ExternalLink className="w-4 h-4" />
+                    </Link>
+                  )}
                 </div>
               </div>
               <div className="p-6">
@@ -132,7 +154,7 @@ const ProjectsSection = ({ projectsRef, scrollToSection }: ProjectsSectionProps)
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProjectsSection
+export default ProjectsSection;

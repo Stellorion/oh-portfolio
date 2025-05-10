@@ -16,7 +16,7 @@ const AboutSection = ({ aboutRef }: AboutSectionProps) => {
                   <div className="relative">
                     <div className="w-64 h-64 md:w-80 md:h-80 rounded-lg overflow-hidden border-2 border-red-500 relative z-10">
                       <Image
-                        src="/placeholder.svg?height=400&width=400"
+                        src="/stellorion.png"
                         alt="Profile"
                         width={400}
                         height={400}
@@ -66,10 +66,6 @@ const AboutSection = ({ aboutRef }: AboutSectionProps) => {
                       <p className="text-gray-300">Full-time</p>
                     </div>
                   </div>
-    
-                  <button className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors">
-                    Download CV
-                  </button>
                 </div>
               </div>
             </div>
