@@ -32,12 +32,11 @@ const projects: Project[] = [
     image: "/oh-portfolio.png",
   },
   {
-    title: "Weekly Quickly",
-    description: "Soon to be a web app for healthy food.",
-    tech: ["Next.js", "Tailwind CSS"],
-    url: "https://github.com/Stellorion/weekly-quickly",
-    website: "https://weekly-quickly.vercel.app",
-    image: "/weekly-quickly.png",
+    title: "OH-AHK-Scripts",
+    description: "A lightweight toolkit built with AutoHotkey featuring global media controls, an auto-clicker, macro recording with import/export, and timers.",
+    tech: ["AutoHotkey (AHK)"],
+    url: "https://github.com/Stellorion/OH-AHK-Scripts",
+    image: "/oh-ahk-light.png",
   },
   {
     title: "My Store MGT",
