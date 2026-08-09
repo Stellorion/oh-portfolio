@@ -53,7 +53,7 @@ const AboutSection = ({ aboutRef }: AboutSectionProps) => {
                     </div>
                     <div>
                       <h3 className="text-red-500 font-medium mb-2">Email:</h3>
-                      <p className="text-gray-300">osher5209@gmail.com</p>
+                      <p className="text-gray-300">osherhaimi.work@gmail.com</p>
                     </div>
                     <div>
                       <h3 className="text-red-500 font-medium mb-2">Location:</h3>
