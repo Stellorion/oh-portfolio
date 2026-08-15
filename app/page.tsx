@@ -9,6 +9,7 @@ import AboutSection from "@/components/about-section"
 import EducationSection from "@/components/education-section"
 import SkillsSection from "@/components/skills-section"
 import ScrollToTop from "@/components/scroll-to-top"
+import ForceField from "@/components/canvasui/ForceField"
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("home")
@@ -71,6 +72,7 @@ export default function Portfolio() {
   }
 
   return (
+    
     <div className="w-full min-h-screen bg-black text-white overflow-x-hidden">
       <Header
         activeSection={activeSection}
@@ -82,12 +84,16 @@ export default function Portfolio() {
         skillsRef={skillsRef}
       />
 
-      <HeroSection
-        homeRef={homeRef}
-        projectsRef={projectsRef}
-        aboutRef={aboutRef}
-        scrollToSection={scrollToSection}
-      />
+      <ForceField gridReveal={"hover"} gridRevealStrength={1} gridRevealRadius={150} flashIntensity={0.05} color={[136, 8, 8]} hoverGlow={0.15} bloom={0.05} edgeGlow={0.05} flowIntensity={0.15}>
+
+        <HeroSection
+          homeRef={homeRef}
+          projectsRef={projectsRef}
+          aboutRef={aboutRef}
+          scrollToSection={scrollToSection}
+        />
+
+      </ForceField>
 
       <AboutSection aboutRef={aboutRef} />
 
@@ -104,5 +110,6 @@ export default function Portfolio() {
 
       <ScrollToTop showScrollTop={showScrollTop} scrollToTop={scrollToTop} />
     </div>
+    
   )
 }
